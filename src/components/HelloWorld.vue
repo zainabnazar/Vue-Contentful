@@ -24,7 +24,6 @@ export default {
           `https://cdn.contentful.com/spaces/${process.env.VUE_APP_SPACEID}/environments/master/entries?access_token=${process.env.VUE_APP_ACCESSTOKEN}`
         )
         .then((res) => {
-          console.log(JSON.stringify(res.data.items[0].fields));
           this.theContents = JSON.stringify(res.data.items[0].fields.name);
           console.log(this.theContents);
         });
@@ -33,7 +32,6 @@ export default {
   },
   mounted() {
     this.getContents();
-    console.log(process.env.VUE_APP_SPACEID);
   },
 };
 </script>
